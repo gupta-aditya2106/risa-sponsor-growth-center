@@ -5,7 +5,9 @@
 // user confirms it, with an idempotency key. The key lives in GEMINI_API_KEY on Vercel, never in the browser.
 import { runQuery, calculate } from '../engine.js';
 
-const MODELS = [process.env.GEMINI_MODEL, 'gemini-2.5-flash', 'gemini-flash-latest', 'gemini-2.0-flash'].filter(Boolean);
+const MODELS = [
+  process.env.GEMINI_MODEL?.trim() || 'gemini-3.5-flash-lite'
+];
 const MAX_STEPS = 7;
 
 const SYSTEM = `You are the sponsorship operating copilot inside the RISA Sponsor Growth Center for a Delhi NCR college fest.
@@ -77,9 +79,14 @@ export default async function handler(req, res) {
           toolConfig: { functionCallingConfig: { mode: step === MAX_STEPS ? 'NONE' : 'AUTO' } }, generationConfig: { temperature: 0.1, maxOutputTokens: 1800 } };
         const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
           method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key }, body: JSON.stringify(body) });
-        if (r.status === 404) throw Object.assign(new Error(`${model} not available`), { skip: true });
         const j = await r.json();
-        if (!r.ok) throw new Error(j.error?.message || `HTTP ${r.status}`);
+
+        if (!r.ok) {
+          throw new Error(
+            `${model}: HTTP ${r.status}: ` +
+            (j.error?.message || 'Gemini request failed')
+          );
+        }
         const parts = j.candidates?.[0]?.content?.parts || [];
         const calls = parts.filter(p => p.functionCall);
         if (!calls.length) {
