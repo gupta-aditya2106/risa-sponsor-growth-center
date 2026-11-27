@@ -1,0 +1,25 @@
+{
+ "format": "gzip+columnar json, split in parts; concatenate then gunzip",
+ "parts": [
+  {
+   "file": "dataset.part0.bin",
+   "bytes": 11279,
+   "sha1": "61c5916e2c925051d2b1bd35486bd434fead94fb"
+  },
+  {
+   "file": "dataset.part1.bin",
+   "bytes": 11279,
+   "sha1": "0ee37b44c89c1fb00135fad71bbc1c2d6b62a56f"
+  },
+  {
+   "file": "dataset.part2.bin",
+   "bytes": 11279,
+   "sha1": "7489b5914acfbe95cefc3e89ab042f7b7c83babf"
+  },
+  {
+   "file": "dataset.part3.bin",
+   "bytes": 11277,
+   "sha1": "8500f270056e96af6d7e032f6ef7112f49348ecd"
+  }
+ ]
+}
