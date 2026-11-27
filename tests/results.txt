@@ -1,0 +1,50 @@
+D01 ok - default as-of is history end 2025-04-20; cutoff is next local midnight
+D02 ok - exact duplicates removed: 3 interaction, 1 qualification, 2 history
+D03 ok - 950 recorded events, 370 attempts
+D04 ok - brand funnel 180 → 109 → 60 → 45 → 24 (cohort)
+D05 ok - opportunity funnel 58 → 46 → 25 → 24
+D06 ok - 46 proposal opportunities vs 45 proposal brands
+D07 ok - 25 ever confirmed vs 24 current; O006 withdrawn after confirming
+D08 ok - signed ₹22.4L = ₹20L cash-support + ₹2.4L in-kind
+D09 ok - receipts unavailable, never ₹0
+D10 ok - 14 open proposals worth ₹10.5L
+D11 ok - cold outbound recorded activity share 782/950 = 82.3% with 0 wins
+D12 ok - SC04 is inbound, not warm introduction
+D13 ok - target stepwise: 20 on 14 Mar, 28 on 15 Mar
+D14 ok - what changed 14→15 Mar: target revision 17/20 → 17/28 is an entity item with no deal change
+D15 ok - what changed reconciles signed-value change to entity items
+D16 ok - no leakage: 2025-02-20 snapshot has no later records
+D17 ok - O006 confirmed (not withdrawn) as of 2025-03-01
+D18 ok - boundary: a record at 23:59:59 counts, one at next midnight does not
+D19 ok - conflicting payload under one ID is flagged, not silently kept twice
+D20 ok - in-app deal update flows through as a new dated record
+D21 ok - naive pooled closure scenario 24/32 = 75%, labelled timing-excluded
+D22 ok - cost per win undefined with 0 wins; spend unknown until entered
+D23 ok - upload validation rejects a missing sheet and unknown stages
+D24 ok - snapshot ID changes with as-of, overlay revision and mode
+P01 ok - base 44.5125, aim 72.7085, aim without title advance 63.8885 (−8.82)
+P02 ok - bridge 44.5125 + 12.74 + 11.956 + 3.5 = 72.7085
+P03 ok - budgets 0.3/0.6/2.0/1.5/1.5 = 5.9 + 0.1 unallocated
+P04 ok - aim signed exactly ₹102.25L; deal mix 2.77× / 3.42× historical
+P05 ok - reference scenario labelled as interview reference (deck: Today)
+P06 ok - every rule is "not due" or insufficient far before the fest
+P07 ok - no records → insufficient data, never stop
+P08 ok - B1 at T-45 with 11 LOIs → review (no published branch)
+P09 ok - B2 at T-30 with 22 fully paid → change; 50/50 splits are not fully paid
+P10 ok - B3 pilot and collection gates are separate
+P11 ok - B3 collection: below 40% → review, not stop
+P12 ok - B4 title + 2 co-titles (term sheet counts) → scale
+P13 ok - B5 uses complete weeks only; current week excluded
+P14 ok - FEST gate ₹25.63L at T-30 → change; whole-fest scope
+P15 ok - FEST boundary: exactly ₹27L → plan
+P16 ok - pending receipts and receipts after fest start do not count
+P17 ok - cash calendar separates overdue, due before fest, due after fest
+P18 ok - milestone evaluated at the milestone date: later receipts do not change a T-30 call
+P19 ok - all demo records are marked sim
+P20 ok - decision brief contains snapshot, rule table and evidence classes
+T01 ok - runQuery aggregates over the full table, not a truncated subset
+T02 ok - runQuery count_distinct brands with proposals = 45
+T03 ok - runQuery rejects unknown fields and tables with the supported list
+T04 ok - calculate is exact and safe
+T05 ok - snapshot states capabilities for unavailable data
+49 passed
