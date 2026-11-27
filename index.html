@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RISA Sponsor Growth Center · Growth APM Challenge B (Aditya Gupta)</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>Sponsor Growth Center</b><span>Maximise sponsorship cash collected before the fest · RISA Growth APM, Challenge B · Aditya Gupta</span></div>
+  <div class="ctrl">
+    <div class="modes" role="tablist" aria-label="Mode">
+      <button data-mode="historical" class="on" title="Synthetic CampusFest 2025 workbook (D)">Historical 2025</button>
+      <button data-mode="plan" title="Frozen deck model and scenario lab (A/I)">Deck plan</button>
+      <button data-mode="execution" title="Operational records for the five bets (simulated demo or your entries)">Execution demo <small>SIM</small></button>
+    </div>
+    <label>As of <small>(end of day IST)</small><input type="date" id="asof"></label>
+    <button id="drawerBtn" class="ghost">Data &amp; definitions</button>
+    <button id="copilotBtn" class="ghost">Copilot</button>
+  </div>
+</header>
+<div id="strip" class="strip" aria-live="polite"></div>
+<div id="banner" class="banner"></div>
+<nav class="tabs">
+  <button data-tab="measure" class="on">1 · Measure</button>
+  <button data-tab="diagnose">2 · Diagnose</button>
+  <button data-tab="decide">3 · Decide</button>
+  <button data-tab="manage">4 · Manage</button>
+</nav>
+<div class="layout">
+  <main>
+    <section id="measure" class="tab on"></section>
+    <section id="diagnose" class="tab"></section>
+    <section id="decide" class="tab"></section>
+    <section id="manage" class="tab"></section>
+  </main>
+  <aside id="copilot" class="copilot">
+    <div class="cp-head"><b>AI copilot</b><button id="clearChat" class="sm no">New chat</button><button id="closeCp" class="sm no" aria-label="Close copilot">×</button></div>
+    <p class="muted small">Answers only from the current snapshot through read-only tools. It drafts tasks; nothing is saved until you confirm.</p>
+    <div id="log" class="log"></div>
+    <div class="chips" id="examples"></div>
+    <form id="ask"><input id="q" placeholder="Ask about deals, cash, rules, tasks…" autocomplete="off" maxlength="1200"><button>Ask</button></form>
+  </aside>
+</div>
+<div id="drawer" class="drawer" hidden>
+  <div class="dr-in">
+    <div class="cp-head"><b>Data &amp; definitions</b><button id="closeDrawer" class="sm no" aria-label="Close">×</button></div>
+    <div id="drawerBody"></div>
+  </div>
+</div>
+<footer>Evidence classes: <b>D</b> dataset (synthetic CampusFest 2025 workbook) · <b>I</b> interviews · <b>A</b> plan assumption · <b>U</b> user entry · <b>SIM</b> simulated demo. Signed value is not cash received; recorded receipts are not a bank balance. The source workbook is never overwritten: edits are separate dated records.</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
